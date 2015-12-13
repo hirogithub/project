@@ -1,0 +1,1 @@
+../../../../../../share/javascript/scriptaculous/controls.js

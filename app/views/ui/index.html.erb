@@ -1,0 +1,30 @@
+<h1>Ui#index</h1>
+<p>Find me in app/views/ui/index.html.erb</p>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+
+<%= form_tag "commit" do %>
+名前：<%= text_field_tag :name , '',:class=> 'text_name' %> </br>
+年齢：<%= text_field_tag :age , '',:class=>'text_age' %> </br>
+配偶者あり： <%= check_box_tag :marriaged, true, false, { :class=>'text_marriaged' } %> </br>
+住所： <%= check_box_tag :address, true, false, { :class=>'text_address'}  %> </br>
+子供の数： <%= text_field_tag :children ,'', :class=>'text_children' %> </br>
+attr:<%= select_tag :attr,options_for_select(@attr) , :class=>'text_attr' %> </br>
+<% @cond.each_with_index do |c,i| %>
+cond：<%= c.to_s %>:<%= text_field_tag "#{c}" ,'',:class => "cond_#{i}" %>km以内 </br>
+<% end %>
+
+
+</br>
+緯度：<%= text_field_tag :lat ,'', :class => 'text_lat' %> </br>
+経度：<%= text_field_tag :lon ,'',:class => 'text_lon'%> </br>
+<% if false %>
+<%= submit_tag ("送信") , :class => 'text_submit' %>
+<% end %>
+<button  type="button" class = "text_button">決定 </button>
+<button  type="button" class = "text_button_temp">決定(仮) </button>
+<% end %>
+
+<div class="wrap">
+<div id="map_canvas" style="width:500px; height:500px;">
+</div>

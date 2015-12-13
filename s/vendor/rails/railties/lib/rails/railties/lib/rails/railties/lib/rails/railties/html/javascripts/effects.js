@@ -1,0 +1,1 @@
+../../../../../../share/javascript/scriptaculous/effects.js
